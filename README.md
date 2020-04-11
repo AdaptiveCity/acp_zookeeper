@@ -27,18 +27,22 @@ sudo mkdir /opt/zookeeper-3.6.0
 sudo chown zookeeper:zookeeper /opt/zookeeper-3.6.0
 
 sudo ln -s /opt/zookeeper-3.6.0 /opt/zookeeper
-
 ```
+To use sudoer ssh key (to copy/paste into ~zookeeper/.ssh/authorized_keys):
+```
+cat .ssh/id_rsa.pub
+```
+
 As user `zookeeper`:
 ```
 ssh-keygen -t rsa -b 4096 -C "zookeeper@tfc-app6"
 git clone https://github.com/AdaptiveCity/acp_zookeeper
-wget -0- "https://downloads.apache.org/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz"
+wget "https://downloads.apache.org/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz"
 tar -xzf "apache-zookeeper-3.6.0-bin.tar.gz" --directory /opt/zookeeper-3.6.0 --strip-components 1
 ```
 Get the `acp_zookeeper/secrets` directory from another server.
 ```
-cp acp_zookeeper/secrets/zoo.conf /opt/zookeeper/conf/
+cp acp_zookeeper/secrets/zoo.cfg /opt/zookeeper/conf/
 cp acp_zookeeper/conf/zookeeper-env.sh /opt/zookeeper/conf/
 ```
 ## Check java
