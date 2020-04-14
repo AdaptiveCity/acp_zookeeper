@@ -35,7 +35,7 @@ cat .ssh/id_rsa.pub
 
 As user `zookeeper`:
 ```
-ssh-keygen -t rsa -b 4096 -C "zookeeper@tfc-app6"
+ssh-keygen -t rsa -b 4096 -C "zookeeper@<servername>"
 git clone https://github.com/AdaptiveCity/acp_zookeeper
 wget "https://downloads.apache.org/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz"
 tar -xzf "apache-zookeeper-3.6.0-bin.tar.gz" --directory /opt/zookeeper-3.6.0 --strip-components 1
